@@ -1,23 +1,19 @@
+// database.js
 const mongoose = require('mongoose');
 
-// Define the schema
-const UserSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
+const mongoDBUrl = 'mongodb://localhost:27017/LearnLink';
+
+const initializeDatabase = async () => {
+  try {
+    await mongoose.connect(mongoDBUrl, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+      
+    });
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
   }
-}, { timestamps: true }); // This second object adds createdAt and updatedAt fields
+};
 
-// Create the model from the schema
-const User = mongoose.model('User', UserSchema);
-
-module.exports = User;// controllers/
+module.exports = initializeDatabase;

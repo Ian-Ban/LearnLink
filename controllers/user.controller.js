@@ -1,3 +1,4 @@
+// user.controller.js
 const User = require('../models/user.model'); 
 
 const createUser = async (req, res) => {
@@ -10,7 +11,7 @@ const createUser = async (req, res) => {
   }
 };
 
-// This is the correct way to export if you're using module.exports
+
 module.exports = {
   createUser
 };
