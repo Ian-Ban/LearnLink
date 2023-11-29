@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <p> Welcome to LearnLink! </p>
+    <ul>
+        <li> <a href="/signup"> Sign Up</a> </li>
+        <li> <a href="/signin">Sign In</a> </li>
+        <li> <a href="/">Home</a> </li>
+        <li> Button </li>
+    </ul>
+</head>
+
+<body>
+    <% if (title == "Signin") %>
+    <% { %>
+    <% <a href="/signin"> Sign In</a> %>
+    <% } %>
+
+    <% if (title == "Signup") %>
+    <% { %>
+    <% <a href="/signup"> Sign In</a> %>
+    <% } %>
+
+    <% if (title == "Home") %>
+    <% { %>
+    <% <a href="/"> Home</a> %>
+    <% } %>
+
+</body>
+
+</html>
+
+<!-- Implement these things: Picture and way to show all things from database-->
