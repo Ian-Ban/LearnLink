@@ -8,9 +8,9 @@ const app = express();
 
 app.use(express.json());
 
-
+app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
-  res.send('Welcome to LearnLink!');
+  res.send("Welcome to LearnLink");
 });
 
 app.use('/auth', authRoutes);
