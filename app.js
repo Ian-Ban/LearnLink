@@ -3,18 +3,19 @@ const express = require('express');
 const initializeDatabase = require('./database');
 const userRoutes = require('./routes/user.routes');
 const authRoutes = require('./routes/auth.routes');
-
+var path = require('path');
 const app = express();
 
 app.use(express.json());
 
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
-  res.send("Welcome to LearnLink");
+  res.render('home', {title: "Home"});
 });
 
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
+app.use(express.static(path.join(__dirname, '/public')));
 
 const PORT = 3000;
 
