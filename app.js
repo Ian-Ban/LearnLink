@@ -18,6 +18,9 @@ app.use('/users', userRoutes);
 
 const PORT = 3000;
 
+//users/signup
+//users/signin
+
 
 
 initializeDatabase().then(() => {
